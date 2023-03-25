@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * _printf - produces output according to a format
  * @format: character string containing zero or more directives
@@ -6,12 +7,11 @@
  */
 int _printf(const char *format, ...)
 {
+	int i = 0, count = 0;
 	va_list args;
-	int i, len = 0;
-	char *str;
 
 	va_start(args, format);
-	for (i = 0; format[i] != '\0'; i++)
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
@@ -19,37 +19,30 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					len += _putchar(va_arg(args, int));
+					putchar(va_arg(args, int));
+					count++;
 					break;
 				case 's':
-					str = va_arg(args, char *);
-					if (str == NULL)
-						str = "(null)";
-					len += _puts(str);
+					count += printf("%s", va_arg(args, char *));
 					break;
 				case '%':
-					len += _putchar('%');
+					putchar('%');
+					count++;
 					break;
 				default:
-					len += _putchar('%');
-					len += _putchar(format[i]);
+					putchar('%');
+					putchar(format[i]);
+					count += 2;
 					break;
 			}
 		}
 		else
 		{
-			len += _putchar(format[i]);
+			putchar(format[i]);
+			count++;
 		}
+		i++;
 	}
 	va_end(args);
-	return (len);
-}
-/**
- * _putchar - write the character of c to stdout
- * @c: the character to print
- * Return: on success 1
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
+	return (count);
 }
