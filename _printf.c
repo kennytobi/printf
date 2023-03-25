@@ -9,7 +9,6 @@ int _printf(const char *format, ...)
 {
 	int i = 0, count = 0;
 	va_list args;
-	char buffer[BUFF_SIZE];
 
 	if (format == NULL)
 		return (-1);
