@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0, count = 0;
 	va_list args;
+	char buffer[BUFF_SIZE];
 
 	if (format == NULL)
 		return (-1);
@@ -25,7 +26,7 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				case 's':
-					count ++ printf("%s", va_arg(args, char *));
+					count += printf("%s", va_arg(args, char *));
 					break;
 				case '%':
 					putchar('%');
