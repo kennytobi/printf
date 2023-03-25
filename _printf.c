@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
-	for (format && format[i])
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				case 's':
-					count += printf("%s", va_arg(args, char *));
+					count ++ printf("%s", va_arg(args, char *));
 					break;
 				case '%':
 					putchar('%');
