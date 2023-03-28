@@ -1,1 +1,1 @@
-This is a printf peer group project for Kehinde Tobi and Itsede Okhai
+this is our joint printf project between kenny and okhai
