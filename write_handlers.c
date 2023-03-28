@@ -9,6 +9,7 @@
  * @width: get width.
  * @precision: precision specifier
  * @size: Size specifier
+ * created by kenny and Okhai
  *
  * Return: Number of chars printed.
  */
