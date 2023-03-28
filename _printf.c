@@ -4,6 +4,10 @@ void print_buffer(char buffer[], int *buff_ind);
 /**
  * _printf - Printf function
  * @format: format.
+<<<<<<< HEAD
+=======
+ * This file was created by Kehinde and Okhai
+>>>>>>> 6ee8396f8f6504289c427462e0ad944a90a4d730
  * Return: Printed chars.
  */
 int _printf(const char *format, ...)
